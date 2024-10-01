@@ -1,85 +1,336 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.8.8 on win32)" generated="2024-09-25T11:28:26.595257" rpa="false" schemaversion="5">
-<suite id="s1" name="TC01" source="C:\Users\nexle-user\PycharmProjects\pythonProject8\DAY01\TC01.robot">
-<test id="s1-t1" name="TC01Test" line="12">
+<robot generator="Robot 7.1 (Python 3.8.8 on win32)" generated="2024-09-30T17:35:44.447967" rpa="false" schemaversion="5">
+<suite id="s1" name="Tc02" source="C:\Users\nexle-user\Desktop\RobotFramework_DuongTV\DAY01\tc02.robot">
+<test id="s1-t1" name="TC01Test" line="28">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-25T11:28:26.953529" level="INFO">Opening browser 'chrome' to base url 'https://beahub-web-v1006.devcaprover.nexlesoft.com/'.</msg>
+<msg time="2024-09-30T17:35:44.787696" level="INFO">Opening browser 'chrome' to base url 'https://beahub-web-v1006.devcaprover.nexlesoft.com/'.</msg>
 <arg>${url}</arg>
 <arg>${browserName}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-25T11:28:26.953529" elapsed="6.248370"/>
+<status status="PASS" start="2024-09-30T17:35:44.787696" elapsed="4.550061"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-25T11:28:33.202899" elapsed="0.078955"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-25T11:28:33.284852" level="INFO">Typing text 'merchantowner' into text field 'id:horizontal_login_username'.</msg>
-<arg>id:horizontal_login_username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-25T11:28:33.282853" elapsed="0.398781"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T11:28:35.687033" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T11:28:33.682634" elapsed="2.004399"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-25T11:28:35.688033" level="INFO">Typing text '12345678' into text field 'id:horizontal_login_password'.</msg>
-<arg>id:horizontal_login_password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-25T11:28:35.688033" elapsed="0.257859"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T11:28:37.953951" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T11:28:35.946890" elapsed="2.007061"/>
+<status status="PASS" start="2024-09-30T17:35:49.338756" elapsed="0.055971"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-25T11:28:37.955930" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<msg time="2024-09-30T17:35:49.395724" level="INFO">Clicking button '//button[@type='submit']'.</msg>
 <arg>//button[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-25T11:28:37.954931" elapsed="0.126767"/>
+<status status="PASS" start="2024-09-30T17:35:49.394727" elapsed="0.207879"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T11:28:43.093343" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T11:28:38.082698" elapsed="5.010645"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:49.627591" level="INFO">Current page contains element '//span[contains(text(),'Please enter Username!')]'.</msg>
+<arg>${USERNAME_ERROR_MSG}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-09-30T17:35:49.603606" elapsed="0.023985"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:49.644580" level="INFO">Current page contains element '//span[contains(text(),'Please enter password!')]'.</msg>
+<arg>${PASSWORD_ERROR_MSG}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-09-30T17:35:49.628589" elapsed="0.015991"/>
+</kw>
+<status status="PASS" start="2024-09-30T17:35:44.785692" elapsed="4.859888"/>
+</test>
+<test id="s1-t2" name="TC02: Empty with empty password" line="35">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2024-09-30T17:35:49.648577" elapsed="1.895932"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:51.546507" level="INFO">Typing text 'merchantowner' into text field 'id:horizontal_login_username'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:35:51.545508" elapsed="0.314819"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:51.861326" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:35:51.861326" elapsed="0.083952"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PASSWORD_ERROR_MSG}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-09-30T17:35:51.946278" elapsed="0.014990"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:51.978259" level="INFO">Current page contains text 'Please enter password!'.</msg>
+<arg>Please enter password!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-09-30T17:35:51.962269" elapsed="0.016989"/>
+</kw>
+<status status="PASS" start="2024-09-30T17:35:49.645580" elapsed="2.333678"/>
+</test>
+<test id="s1-t3" name="TC3: Empty with empty username" line="41">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2024-09-30T17:35:51.980258" elapsed="2.657443"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:54.638700" level="INFO">Typing text '12345678' into text field 'id:horizontal_login_password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:35:54.637701" elapsed="0.179898"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:54.818597" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:35:54.818597" elapsed="0.083952"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:54.918541" level="INFO">Current page contains element '//span[contains(text(),'Please enter Username!')]'.</msg>
+<arg>${USERNAME_ERROR_MSG}</arg>
+<arg>10s</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-09-30T17:35:54.902549" elapsed="0.015992"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:54.938529" level="INFO">Current page contains text 'Please enter Username!'.</msg>
+<arg>Please enter Username!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-09-30T17:35:54.918541" elapsed="0.020986"/>
+</kw>
+<status status="PASS" start="2024-09-30T17:35:51.980258" elapsed="2.959269"/>
+</test>
+<test id="s1-t4" name="TC4: Login with invalid account" line="47">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2024-09-30T17:35:54.940527" elapsed="1.628970"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:56.571496" level="INFO">Typing text '123sdsds' into text field 'id:horizontal_login_username'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${INVALID_USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:35:56.570497" elapsed="0.168844"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:56.740340" level="INFO">Typing text '87654321' into text field 'id:horizontal_login_password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:35:56.740340" elapsed="0.153911"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:56.896250" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:35:56.895254" elapsed="0.060962"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ALERT_FAILED}</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T17:35:56.956216" elapsed="0.524756"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:57.501130" level="INFO">Current page contains text 'Login was failure'.</msg>
+<arg>Login was failure</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-09-30T17:35:57.481977" elapsed="0.019153"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:57.519927" level="INFO">Current page contains text 'Username or Password is incorrect.'.</msg>
+<arg>Username or Password is incorrect.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-09-30T17:35:57.502024" elapsed="0.018904"/>
+</kw>
+<status status="PASS" start="2024-09-30T17:35:54.940527" elapsed="2.580401"/>
+</test>
+<test id="s1-t5" name="TC5: Login with valid account" line="55">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2024-09-30T17:35:57.521926" elapsed="1.607789"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:59.132715" level="INFO">Typing text 'merchantowner' into text field 'id:horizontal_login_username'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:35:59.130717" elapsed="0.203223"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:59.334937" level="INFO">Typing text '12345678' into text field 'id:horizontal_login_password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:35:59.334937" elapsed="0.136921"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:35:59.472858" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:35:59.472858" elapsed="0.061963"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Dashboard</arg>
-<arg>timeout=10s</arg>
+<arg>2s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-09-25T11:28:43.095341" elapsed="0.042977"/>
+<status status="PASS" start="2024-09-30T17:35:59.535821" elapsed="0.324977"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-09-25T11:28:43.182293" level="INFO">Current page contains text 'Dashboard'.</msg>
+<msg time="2024-09-30T17:35:59.875512" level="INFO">Current page contains text 'Dashboard'.</msg>
 <arg>Dashboard</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-09-25T11:28:43.139320" elapsed="0.042973"/>
+<status status="PASS" start="2024-09-30T17:35:59.861804" elapsed="0.013708"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-25T11:28:43.183292" elapsed="2.455371"/>
+<status status="PASS" start="2024-09-30T17:35:57.521926" elapsed="2.354599"/>
+</test>
+<test id="s1-t6" name="TC6: Log out" line="62">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2024-09-30T17:35:59.878517" elapsed="1.763841"/>
 </kw>
-<status status="PASS" start="2024-09-25T11:28:26.951531" elapsed="18.687685"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CLICK_ICON_AVATAR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T17:36:01.645354" elapsed="1.694962"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:03.341316" level="INFO">Clicking element 'xpath=//img[@class='user__avatar']'.</msg>
+<arg>${CLICK_ICON_AVATAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:36:03.341316" elapsed="0.081954"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:03.467243" level="INFO">Current page contains text 'Log out'.</msg>
+<arg>Log out</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-09-30T17:36:03.424267" elapsed="0.043975"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:03.468242" level="INFO">Clicking element 'xpath://li[@class='ant-dropdown-menu-item ant-dropdown-menu-item-only-child'][4]/span/span[contains(text(), 'Log out')]'.</msg>
+<arg>xpath://li[@class='ant-dropdown-menu-item ant-dropdown-menu-item-only-child'][4]/span/span[contains(text(), 'Log out')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:36:03.468242" elapsed="0.088950"/>
+</kw>
+<status status="PASS" start="2024-09-30T17:35:59.877515" elapsed="3.680677"/>
+</test>
+<test id="s1-t7" name="TC07: Forget password with empty account" line="69">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2024-09-30T17:36:03.560191" elapsed="1.631448"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_FOGOT_PASS}</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T17:36:05.195636" elapsed="0.041575"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:05.238211" level="INFO">Clicking element '//div[@class='styles__ForgotPasswordWrapper-sc-18b5g3s-6 iiWWsb']//span[contains(text(),'Forgot password?')]'.</msg>
+<arg>${BUTTON_FOGOT_PASS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:36:05.237211" elapsed="0.072959"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[@labelname='Account*']</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T17:36:05.310170" elapsed="0.261110"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:05.572257" level="INFO">Clicking element '//button[@class='ant-btn save-button ant-btn-primary']'.</msg>
+<arg>${BUTTON_SEND_FORGOT_PASS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:36:05.572257" elapsed="0.075166"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${ACC_ERROS_MGS}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-09-30T17:36:05.648422" elapsed="0.247825"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:05.929581" level="INFO">Current page contains text 'Please enter Username!'.</msg>
+<arg>Please enter Username!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-09-30T17:36:05.897246" elapsed="0.033349"/>
+</kw>
+<status status="PASS" start="2024-09-30T17:36:03.559191" elapsed="2.371404"/>
+</test>
+<test id="s1-t8" name="TC8: Forget password with invalid account" line="78">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:05.932612" level="INFO">Typing text '13434354' into text field '//input[@id='username']'.</msg>
+<arg>//input[@id='username']</arg>
+<arg>13434354</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:36:05.932612" elapsed="0.137963"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:06.070575" level="INFO">Clicking element '//button[@class='ant-btn save-button ant-btn-primary']'.</msg>
+<arg>${BUTTON_SEND_FORGOT_PASS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:36:06.070575" elapsed="0.063959"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@class='ant-notification-notice ant-notification-notice-closable']</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T17:36:06.135534" elapsed="0.491249"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:06.664745" level="INFO">Current page contains text 'Username is incorrect.'.</msg>
+<arg>Username is incorrect.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-09-30T17:36:06.627784" elapsed="0.036961"/>
+</kw>
+<status status="PASS" start="2024-09-30T17:36:05.931605" elapsed="0.734138"/>
+</test>
+<test id="s1-t9" name="TC9: Forget password with valid account" line="84">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2024-09-30T17:36:06.668738" elapsed="1.576409"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:08.246147" level="INFO">Clicking element '//div[@class='styles__ForgotPasswordWrapper-sc-18b5g3s-6 iiWWsb']//span[contains(text(),'Forgot password?')]'.</msg>
+<arg>${BUTTON_FOGOT_PASS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:36:08.246147" elapsed="0.082469"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:08.329723" level="INFO">Typing text 'merchantowner' into text field '//input[@id='username']'.</msg>
+<arg>${INPUT_ACC_FORGOT}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:36:08.329723" elapsed="0.148014"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:08.478738" level="INFO">Clicking element '//button[@class='ant-btn save-button ant-btn-primary']'.</msg>
+<arg>${BUTTON_SEND_FORGOT_PASS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T17:36:08.477737" elapsed="0.053111"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[@class='ant-notification-notice ant-notification-notice-closable']</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T17:36:08.530848" elapsed="0.713953"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-09-30T17:36:09.280668" level="INFO">Current page contains text 'The system has sent the password recovery link to your email address'.</msg>
+<arg>The system has sent the password recovery link to your email address</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-09-30T17:36:09.244801" elapsed="0.036898"/>
+</kw>
+<status status="PASS" start="2024-09-30T17:36:06.667739" elapsed="2.614940"/>
 </test>
 <doc>Simple example using SeleniumLibrary.</doc>
-<status status="PASS" start="2024-09-25T11:28:26.598239" elapsed="19.044602"/>
+<status status="PASS" start="2024-09-30T17:35:44.449966" elapsed="24.834709"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC01">TC01</stat>
+<stat pass="9" fail="0" skip="0" id="s1" name="Tc02">Tc02</stat>
 </suite>
 </statistics>
 <errors>
